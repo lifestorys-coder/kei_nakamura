@@ -1,0 +1,43 @@
+name: 沖縄観光新聞 - 毎日自動生成
+
+on:
+  schedule:
+    # 21:00 UTC = 06:00 JST（毎朝、沖縄観光新聞を発行）
+    - cron: "0 21 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-newspaper
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate newspaper
+        run: python3 scripts/generate_newspaper.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "okinawa-newspaper-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/
+          if git diff --cached --quiet; then
+            echo "変更はありませんでした。"
+          else
+            git commit -m "沖縄観光新聞: $(date -u -d '+9 hours' '+%Y-%m-%d') 号を発行"
+            git push
+          fi

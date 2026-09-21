@@ -1,0 +1,275 @@
+:root {
+  --ink: #1b1b1b;
+  --paper: #faf6ec;
+  --accent: #0f6b5c;
+  --accent-2: #c94f2b;
+  --line: #d8cfb8;
+  --muted: #6b6455;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+  line-height: 1.7;
+}
+
+.masthead {
+  border-bottom: 4px solid var(--ink);
+  padding: 28px 16px 18px;
+  text-align: center;
+  background: linear-gradient(180deg, #fffdf7, var(--paper));
+}
+
+.masthead-eyebrow {
+  margin: 0;
+  letter-spacing: 0.25em;
+  font-size: 0.75rem;
+  color: var(--accent-2);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.masthead-title {
+  margin: 6px 0;
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  letter-spacing: 0.08em;
+}
+
+.masthead-date {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.topnav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 10px;
+  border-bottom: 1px solid var(--line);
+  background: #fffdf7;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+.topnav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.topnav a:hover {
+  text-decoration: underline;
+}
+
+.paper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 8px;
+  margin-bottom: 18px;
+}
+
+.notice {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+}
+
+.weather-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  text-align: center;
+  background: #fffdf7;
+}
+
+.weather-day {
+  font-weight: 700;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.weather-date {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-left: 4px;
+}
+
+.weather-icon {
+  font-size: 2.2rem;
+  margin: 6px 0;
+}
+
+.weather-label {
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.weather-temp .tmax {
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
+.weather-temp .tmin {
+  color: #3a6ea5;
+}
+
+.weather-sub {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 4px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.spot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.spot-card {
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  padding: 14px 16px;
+  background: #fffdf7;
+}
+
+.spot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.spot-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.spot-category {
+  font-size: 0.75rem;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 1px 8px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  white-space: nowrap;
+}
+
+.spot-area {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.spot-desc {
+  margin: 8px 0 0;
+  font-size: 0.95rem;
+}
+
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.news-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--line);
+}
+
+.news-item a {
+  color: var(--ink);
+  text-decoration: none;
+  flex: 1;
+}
+
+.news-item a:hover {
+  color: var(--accent-2);
+  text-decoration: underline;
+}
+
+.news-date {
+  font-size: 0.8rem;
+  color: var(--muted);
+  white-space: nowrap;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.source-note {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: right;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.archive-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 3;
+}
+
+.archive-list li {
+  padding: 4px 0;
+}
+
+.archive-list a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.archive-list a:hover {
+  text-decoration: underline;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 4px solid var(--ink);
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.generated-at {
+  margin-top: 4px;
+}
+
+@media (max-width: 560px) {
+  .archive-list {
+    columns: 2;
+  }
+  .news-item {
+    flex-direction: column;
+    gap: 2px;
+  }
+}
